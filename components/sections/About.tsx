@@ -1,6 +1,6 @@
 export default function About() {
     return (
-        <section>
+        <section id="about" className="min-h-screen">
             About
         </section>
     );

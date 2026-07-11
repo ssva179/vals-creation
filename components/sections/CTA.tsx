@@ -1,6 +1,6 @@
 export default function CTA() {
     return (
-        <section>
+        <section  id="cta" className="min-h-screen">
             CTA
         </section>
     );

@@ -1,6 +1,6 @@
 export default function Services() {
     return (
-        <section>
+        <section id="experiences" className="min-h-screen">
             Services
         </section>
     );

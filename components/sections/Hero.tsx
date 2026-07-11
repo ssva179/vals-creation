@@ -1,6 +1,6 @@
 export default function Hero() {
     return (
-        <section>
+        <section id="hero" className="min-h-screen">
             Hero
         </section>
     );
