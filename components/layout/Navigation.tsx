@@ -99,43 +99,43 @@ export default function Navigation() {
 
             </nav>
             {isOpen && (
-                <div className="fixed inset-x-0 top-24 h-[calc(100dvh-6rem)] z-40 overflow-y-auto bg-[#dbbab4]/70 px-6 pt-16 lg:hidden">
+                <div className="fixed inset-x-0 top-24 h-[calc(100dvh-6rem)] z-40 overflow-y-auto bg-[#dbbab4]/80 px-6 pt-16 lg:hidden">
                     <div className="flex min-h-full w-full max-w-md flex-col gap-2 -mt-8 pl-6 pb-20">
                         <Link
                             href="/#hero"
                             onClick={() => setIsOpen(false)}
-                            className="font-heading text-xl md:text-2xl font-bold text-[#49413d] hover:text-[#8f5e56]"
+                            className="font-heading text-xl md:text-2xl font-bold text-[#332e2b] hover:text-[#8f5e56]"
                         >
                             Home
                         </Link>
                         <Link
                             href="/#about"
                             onClick={() => setIsOpen(false)}
-                            className="font-heading text-xl md:text-2xl font-bold text-[#49413d] hover:text-[#8f5e56]"
+                            className="font-heading text-xl md:text-2xl font-bold text-[#332e2b] hover:text-[#8f5e56]"
                         >About
                         </Link>
                         <Link
                             href="/#experiences"
                             onClick={() => setIsOpen(false)}
-                            className="font-heading text-xl md:text-2xl font-bold text-[#49413d] hover:text-[#8f5e56]"
+                            className="font-heading text-xl md:text-2xl font-bold text-[#332e2b] hover:text-[#8f5e56]"
                         >Experiences
                         </Link>
                         <Link
                             href="/gallery"
                             onClick={() => setIsOpen(false)}
-                            className="font-heading text-xl md:text-2xl font-bold text-[#49413d] hover:text-[#8f5e56]"
+                            className="font-heading text-xl md:text-2xl font-bold text-[#332e2b] hover:text-[#8f5e56]"
                         >Gallery
                         </Link>
                         <Link
                             href="/#faq"
                             onClick={() => setIsOpen(false)}
-                            className="font-heading text-xl md:text-2xl font-bold text-[#49413d] hover:text-[#8f5e56]"
+                            className="font-heading text-xl md:text-2xl font-bold text-[#332e2b] hover:text-[#8f5e56]"
                         >FAQ
                         </Link>
                         <Link
                             href="/inquiry"
                             onClick={() => setIsOpen(false)}
-                            className="font-heading text-xl md:text-2xl font-bold text-[#49413d] hover:text-[#8f5e56]"
+                            className="font-heading text-xl md:text-2xl font-bold text-[#332e2b] hover:text-[#8f5e56]"
                         >
                             Book Now
                         </Link>
@@ -144,7 +144,7 @@ export default function Navigation() {
                             target="_blank"
                             rel="noopener noreferrer"
                             aria-label="Visit Val's Creations on Instagram"
-                            className="mt-15 text-[#49413d] transition-colors hover:text-[#8f5e56]"
+                            className="mt-15 text-[#332e2b] transition-colors hover:text-[#8f5e56]"
                         >
                             <FaInstagram className="h-6 w-6" />
                         </a>
