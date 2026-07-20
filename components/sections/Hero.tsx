@@ -118,8 +118,6 @@ export default function Hero() {
                 {/* mobile hero display */}
                 <div className="lg:hidden">
                     <div className="relative min-h-[calc(100svh-6rem)] overflow-hidden">
-
-                        {/* Mobile readability overlays */}
                         <div
                             aria-hidden="true"
                             className="absolute inset-0 bg-black/25"
