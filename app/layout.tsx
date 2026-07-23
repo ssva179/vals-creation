@@ -1,33 +1,27 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Cormorant_Garamond,
-  Montserrat,
+import { Cormorant_Garamond,
+  Lato,
   Allura } from "next/font/google";
 import "./globals.css";
 
-const cormorantGaramond = Cormorant_Garamond({
-  variable: "--font-heading",
+const cormorant = Cormorant_Garamond({
+  variable: "--font-c",
   weight: ["300", "400", "500", "600", "700"],
   subsets: ["latin"],
 });
-const montserrat = Montserrat({
-  variable: "--font-body",
+const lato = Lato({
+  variable: "--font-l",
+  weight: ["300", "400", "700"],
   subsets: ["latin"],
+  display: "swap",
 });
 const allura = Allura({
-  variable: "--font-script",
+  variable: "--font-a",
   weight: "400",
   subsets: ["latin"],
   display: "swap"
 });
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -43,10 +37,8 @@ export default function RootLayout({
     <html
       lang="en"
       className={`
-      ${geistSans.variable} 
-      ${geistMono.variable} 
-      ${cormorantGaramond.variable}
-      ${montserrat.variable}
+      ${cormorant.variable}
+      ${lato.variable}
       ${allura.variable}
       h-full antialiased`}
     >

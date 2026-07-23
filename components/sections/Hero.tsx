@@ -180,7 +180,20 @@ export default function Hero() {
             {/* Fade from hero into About section */}
             <div
                 aria-hidden="true"
-                className="pointer-events-none absolute inset-x-0 -bottom-4 z-20 h-25 bg-gradient-to-b from-transparent via-[#fbf7f2]/70 to-[#fffaf5]"
+                className="
+        pointer-events-none
+        absolute
+        inset-x-0
+        bottom-0
+        z-40
+        h-36
+        bg-gradient-to-b
+        from-transparent
+        via-[#fbf7f2]/35
+        via-55%
+        to-[#fbf7f2]
+
+    "
             />
         </section>
     );

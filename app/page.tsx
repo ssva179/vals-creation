@@ -11,7 +11,7 @@ export default async function Home() {
     return (
         <>
             <Navigation />
-            <main>
+            <main className="pt-20">
                 <Hero />
                 <About />
                 <Services />
