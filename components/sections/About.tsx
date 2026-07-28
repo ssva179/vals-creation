@@ -2,8 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { motion, stagger, useScroll, useTransform } from "motion/react";
-import { useRef } from "react";
+import { motion, stagger } from "motion/react";
 
 const photoContainer = {
     hidden: {},
@@ -61,38 +60,8 @@ const textItem = {
 };
 
 export default function About() {
-    const sectionRef = useRef<HTMLElement>(null);
-
-    const { scrollYProgress } = useScroll({
-        target: sectionRef,
-        offset: ["start end", "end start"],
-    });
-
-    /*
-     * Each desktop photo moves at a slightly different speed.
-     * Keep these values small so the effect stays elegant.
-     */
-    const leftPhotoY = useTransform(
-        scrollYProgress,
-        [0, 1],
-        [35, -35],
-    );
-
-    const centerPhotoY = useTransform(
-        scrollYProgress,
-        [0, 1],
-        [60, -25],
-    );
-
-    const rightPhotoY = useTransform(
-        scrollYProgress,
-        [0, 1],
-        [25, -55],
-    );
-
     return (
         <motion.section
-            ref={sectionRef}
             id="about"
             initial="hidden"
             whileInView="visible"
@@ -119,7 +88,6 @@ export default function About() {
                     {/* Left photo */}
                     <motion.div
                         variants={photoItem}
-                        style={{ y: leftPhotoY }}
                         whileHover={{
                             y: -8,
                             rotate: -1,
@@ -162,7 +130,6 @@ export default function About() {
                     {/* Center photo */}
                     <motion.div
                         variants={photoItem}
-                        style={{ y: centerPhotoY }}
                         whileHover={{
                             y: -10,
                             rotate: 0,
@@ -206,7 +173,6 @@ export default function About() {
                     {/* Right photo */}
                     <motion.div
                         variants={photoItem}
-                        style={{ y: rightPhotoY }}
                         whileHover={{
                             y: -8,
                             rotate: 1,
@@ -389,13 +355,10 @@ export default function About() {
                         ))}
                     </motion.div>
 
-                    <motion.div
-                        variants={textItem}
-                        className="mt-10"
-                    >
+                    <motion.div variants={textItem} className="mt-10">
                         <Link
                             href="/gallery"
-                            className="group inline-flex items-center gap-4 rounded-sm bg-[#d98f82] px-7 py-4 text-sm font-semibold uppercase tracking-[0.15em] text-white transition duration-300 hover:-translate-y-0.5 hover:bg-[#cb7f73]"
+                            className="group inline-flex items-center gap-4 rounded-sm bg-[#c48276] px-7 py-4 text-sm font-semibold uppercase tracking-[0.15em] text-white transition duration-300 hover:-translate-y-0.5 hover:bg-[#cb7f79]"
                         >
                             Explore Our Work
 
@@ -452,7 +415,6 @@ export default function About() {
                         }}
                         className="relative ml-auto w-[55%] -rotate-1"
                     >
-                        {/* Animated metallic border */}
                         <motion.div
                             initial={{ opacity: 0, scale: 0.96 }}
                             whileInView={{ opacity: 1, scale: 1 }}
@@ -469,7 +431,8 @@ export default function About() {
                                     boxShadow: "0 0 0 rgba(92,65,45,0)",
                                 }}
                                 whileInView={{
-                                    boxShadow: "0 18px 40px rgba(92,65,45,0.14)",
+                                    boxShadow:
+                                        "0 18px 40px rgba(92,65,45,0.14)",
                                 }}
                                 viewport={{ once: true, amount: 0.4 }}
                                 transition={{
@@ -522,9 +485,8 @@ export default function About() {
                                 },
                             },
                         }}
-                        className="relative pr-8 w-[60%]"
+                        className="relative w-[60%] pr-8"
                     >
-                        {/* Animated metallic border */}
                         <motion.div
                             initial={{ opacity: 0, scale: 0.96 }}
                             whileInView={{ opacity: 1, scale: 1 }}
@@ -541,7 +503,8 @@ export default function About() {
                                     boxShadow: "0 0 0 rgba(92,65,45,0)",
                                 }}
                                 whileInView={{
-                                    boxShadow: "0 20px 48px rgba(92,65,45,0.15)",
+                                    boxShadow:
+                                        "0 20px 48px rgba(92,65,45,0.15)",
                                 }}
                                 viewport={{ once: true, amount: 0.4 }}
                                 transition={{
@@ -596,7 +559,6 @@ export default function About() {
                         }}
                         className="relative ml-auto w-[55%] rotate-1"
                     >
-                        {/* Animated metallic border */}
                         <motion.div
                             initial={{ opacity: 0, scale: 0.96 }}
                             whileInView={{ opacity: 1, scale: 1 }}
@@ -613,7 +575,8 @@ export default function About() {
                                     boxShadow: "0 0 0 rgba(92,65,45,0)",
                                 }}
                                 whileInView={{
-                                    boxShadow: "0 18px 42px rgba(92,65,45,0.14)",
+                                    boxShadow:
+                                        "0 18px 42px rgba(92,65,45,0.14)",
                                 }}
                                 viewport={{ once: true, amount: 0.4 }}
                                 transition={{

@@ -3,7 +3,7 @@ import { FaInstagram } from "react-icons/fa";
 
 export default function Footer() {
     return (
-        <footer className="border-t border-b-4 border-[#d8bd8c]/30 bg-[#fffdfa]">
+        <footer className="border-t border-b-4 border-[#d8bd8c]/30 bg-[#fffdfa] shadow-black">
             <div className="mx-auto flex max-w-7xl flex-col items-center gap-5 px-6 py-10">
 
                 {/* Instagram Handle*/}
