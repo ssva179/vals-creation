@@ -282,7 +282,7 @@ export default function Hero() {
 
                         <div className="relative aspect-[4/3] overflow-hidden">
                             <Image
-                                src="/images/hero/charcuterie.jpg"
+                                src="/images/hero/charcuterie.png"
                                 alt="A colorful custom charcuterie serving tray"
                                 fill
                                 sizes="310px"
