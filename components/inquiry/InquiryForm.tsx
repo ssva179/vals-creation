@@ -85,10 +85,10 @@ const serviceOptions = [
 ];
 
 const inputStyles =
-    "w-full rounded-md border border-[#d8bd8c]/55 bg-[#fbf7f2]/45 px-4 py-3.5 text-[#3f3a37] outline-none transition placeholder:text-[#a39a94] focus:border-[#b88941] focus:bg-white focus:ring-2 focus:ring-[#c5a065]/15";
+    "block w-full min-w-0 max-w-full box-border rounded-md border border-[#d8bd8c]/55 bg-[#fbf7f2]/45 px-4 py-3.5 text-[#3f3a37] outline-none transition placeholder:text-[#a39a94] focus:border-[#b88941] focus:bg-white focus:ring-2 focus:ring-[#c5a065]/15";
 
 const selectStyles =
-    "w-full appearance-none rounded-md border border-[#d8bd8c]/55 bg-[#fbf7f2]/45 px-4 py-3.5 pr-12 text-[#3f3a37] outline-none transition focus:border-[#b88941] focus:bg-white focus:ring-2 focus:ring-[#c5a065]/15";
+    "block w-full min-w-0 max-w-full box-border appearance-none rounded-md border border-[#d8bd8c]/55 bg-[#fbf7f2]/45 px-4 py-3.5 pr-12 text-[#3f3a37] outline-none transition focus:border-[#b88941] focus:bg-white focus:ring-2 focus:ring-[#c5a065]/15";
 
 const labelStyles =
     "mb-2 block text-xs font-semibold uppercase tracking-[0.14em] text-[#665f5b]";
@@ -343,9 +343,9 @@ export default function InquiryForm() {
                         1,
                     ],
                 }}
-                className="mx-auto max-w-4xl border border-[#d8bd8c]/45 bg-[#fffdfa] p-6 shadow-[0_22px_65px_rgba(92,65,45,0.09)] sm:p-10 lg:p-14"
+                className="mx-auto w-full min-w-0 max-w-4xl overflow-hidden border border-[#d8bd8c]/45 bg-[#fffdfa] p-6 shadow-[0_22px_65px_rgba(92,65,45,0.09)] sm:p-10 lg:p-14"
             >
-                <div className="grid gap-7 sm:grid-cols-2">
+                <div className="grid min-w-0 gap-7 sm:grid-cols-2">
                     {/* Full name */}
                     <label className="block">
                         <span
@@ -532,7 +532,7 @@ export default function InquiryForm() {
                     </label>
 
                     {/* Event date */}
-                    <label className="block">
+                    <label className="block min-w-0">
                         <span
                             className={
                                 labelStyles
@@ -550,7 +550,7 @@ export default function InquiryForm() {
                     </label>
 
                     {/* Start time */}
-                    <label className="block">
+                    <label className="block min-w-0">
                         <span
                             className={
                                 labelStyles
@@ -568,7 +568,7 @@ export default function InquiryForm() {
                     </label>
 
                     {/* End time */}
-                    <label className="block">
+                    <label className="block min-w-0">
                         <span
                             className={
                                 labelStyles
