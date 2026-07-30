@@ -4,7 +4,7 @@ import { motion } from "motion/react";
 
 export default function InquiryHero() {
     return (
-        <section className="relative overflow-hidden bg-[#fbf7f2] px-6 pb-14 pt-24 lg:px-10 lg:pb-20 lg:pt-32">
+        <section className="relative overflow-hidden bg-[#fbf7f2fc] px-6 pb-14 pt-30 lg:px-10 lg:pb-20 lg:pt-32">
             {/* Decorative background details */}
             <div
                 aria-hidden="true"

@@ -20,11 +20,6 @@ const faqs = [
             "Absolutely. Every celebration is unique, and we are happy to customize our services to create an experience that reflects your vision.",
     },
     {
-        question: "Do you travel?",
-        answer:
-            "Yes. Travel availability and any applicable travel fees will depend on your event location. Contact us with your event details for more information.",
-    },
-    {
         question: "How do I reserve my date?",
         answer:
             "Submit an inquiry through our website. We will reach out to discuss your event, answer your questions, and guide you through the booking process.",
@@ -135,7 +130,7 @@ export default function FAQ() {
                                 delay: 0.4,
                                 ease: [0.22, 1, 0.36, 1],
                             }}
-                            className="bg-gradient-to-b from-[#fff2b8] via-[#e6c15a] to-[#8f6729] bg-clip-text text-xl text-transparent"
+                            className="bg-gradient-to-b from-[#fff2b8] via-[#e6c15a] to-[#8f6729] bg-clip-text text-sm text-transparent"
                         >
                             ✦
                         </motion.span>

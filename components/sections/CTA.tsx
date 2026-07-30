@@ -44,7 +44,7 @@ export default function CTA() {
 
                     <span
                         aria-hidden="true"
-                        className="bg-gradient-to-b from-[#fff2b8] via-[#e6c15a] to-[#8f6729] bg-clip-text text-xl text-transparent"
+                        className="bg-gradient-to-b from-[#fff2b8] via-[#e6c15a] to-[#8f6729] bg-clip-text text-sm text-transparent"
                     >
                         ✦
                     </span>

@@ -317,7 +317,7 @@ export default function InquiryForm() {
     }
 
     return (
-        <section className="relative overflow-hidden bg-[#fffdfa] px-6 pb-24 pt-10 lg:px-10 lg:pb-32 lg:pt-14">
+        <section className="relative overflow-hidden bg-[#fbf7f2fc] px-6 pb-24 pt-10 lg:px-10 lg:pb-32 lg:pt-14">
             <motion.form
                 onSubmit={handleSubmit}
                 initial={{

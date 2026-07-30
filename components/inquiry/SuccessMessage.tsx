@@ -11,7 +11,7 @@ export default function SuccessMessage({
                                            onReset,
                                        }: SuccessMessageProps) {
     return (
-        <section className="bg-[#fffdfa] px-6 py-24 lg:px-10 lg:py-32">
+        <section className="bg-[#fbf7f2fc] px-6 py-24 lg:px-10 lg:py-32">
             <motion.div
                 initial={{ opacity: 0, y: 24, scale: 0.98 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}

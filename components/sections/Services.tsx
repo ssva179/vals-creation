@@ -6,31 +6,35 @@ import { motion, stagger } from "motion/react";
 const services = [
     {
         number: "01",
-        title: "Interactive Carts",
+        title: "Interactive Stations",
         description:
-            "Beautifully styled mobile carts designed to become an interactive centerpiece while serving guests in a memorable way.",
+            "Beautifully styled stations designed to become an interactive centerpiece, giving guests a memorable experience and a special piece of your celebration to take home.",
         linkText: "View Cart Gallery",
+        href: "/gallery/interactive-experiences",
     },
     {
         number: "02",
-        title: "Dessert Experiences",
+        title: "Cart Experiences",
         description:
-            "From paletas to specialty treats, each dessert display is thoughtfully arranged to feel inviting, polished, and celebration-ready.",
-        linkText: "See Dessert Displays",
+            "From paletas to specialty treats, each food experience is thoughtfully arranged to feel inviting, polished, and delicious.",
+        linkText: "See Food Displays",
+        href: "/gallery/food-carts",
     },
     {
         number: "03",
-        title: "Marquee Letter Rentals",
+        title: "Marquee Rentals",
         description:
-            "Statement letters that transform your venue, personalize the celebration, and create a beautiful backdrop for photos and memories.",
-        linkText: "Browse Letter Designs",
+            "Statement pieces that transform your venue, personalize the celebration, and create a beautiful backdrop for photos and memories.",
+        linkText: "Browse Available Designs",
+        href: "/gallery/marquee-letters",
     },
     {
         number: "04",
         title: "Event Styling & Details",
         description:
-            "Thoughtful finishing touches that bring the celebration together and help every event feel cohesive, personal, and unforgettable.",
+            "Thoughtful finishing touches that make your celebration unique and help every event feel cohesive and personal.",
         linkText: "Explore Event Inspiration",
+        href: "/gallery",
     },
 ];
 
@@ -112,18 +116,16 @@ export default function Services() {
                                 scale: 0.5,
                                 rotate: -45,
                             }}
-                            whileInView={{
+                            animate={{
                                 opacity: 1,
                                 scale: 1,
                                 rotate: 0,
                             }}
-                            viewport={{ once: true }}
                             transition={{
-                                duration: 0.6,
-                                delay: 0.4,
-                                ease: [0.22, 1, 0.36, 1],
+                                duration: 0.55,
+                                delay: 0.62,
                             }}
-                            className="bg-gradient-to-b from-[#fff2b8] via-[#e6c15a] to-[#8f6729] bg-clip-text text-xl text-transparent"
+                            className="bg-gradient-to-b from-[#fff2b8] via-[#e6c15a] to-[#8f6729] bg-clip-text text-sm text-transparent drop-shadow-[0_1px_1px_rgba(255,245,200,0.5)]"
                         >
                             ✦
                         </motion.span>
@@ -141,7 +143,7 @@ export default function Services() {
                         />
                     </div>
 
-                    <h2 className="font-heading text-4xl font-medium leading-tight tracking-[-0.03em] text-[#3f3a37] md:text-5xl lg:text-6xl">
+                    <h2 className="font-heading text-3xl font-medium leading-tight tracking-[-0.03em] text-[#3f3a37] md:text-5xl lg:text-6xl">
                         Thoughtfully Curated
                         <br />
                         For Every Celebration
@@ -214,7 +216,7 @@ export default function Services() {
                             {/* Link */}
                             <div className="mt-7 lg:mt-0 lg:justify-self-end">
                                 <Link
-                                    href="/gallery"
+                                    href={service.href}
                                     className="
                                         inline-flex
                                         items-center

@@ -118,8 +118,8 @@ export default function About() {
 
                         <div className="relative aspect-[4/5] overflow-hidden">
                             <Image
-                                src="/images/about/about-cart.jpg"
-                                alt="An interactive Bals Creations cart at an event"
+                                src="/images/about/about-interactive.jpg"
+                                alt="An interactive experience at an event by Val's Creations"
                                 fill
                                 sizes="(min-width: 1024px) 260px, 42vw"
                                 className="object-cover transition-transform duration-700 hover:scale-[1.04]"
@@ -161,8 +161,8 @@ export default function About() {
 
                         <div className="relative aspect-[4/5] overflow-hidden">
                             <Image
-                                src="/images/about/about-dessert.jpg"
-                                alt="A custom dessert experience by Bals Creations"
+                                src="/images/about/about-cart.jpg"
+                                alt="A custom food-cart experience by Val's Creations"
                                 fill
                                 sizes="(min-width: 1024px) 265px, 43vw"
                                 className="object-cover transition-transform duration-700 hover:scale-[1.04]"
@@ -244,7 +244,7 @@ export default function About() {
                         variants={textItem}
                         className="text-xs font-bold uppercase tracking-[0.28em] text-[#c48276]"
                     >
-                        About Bals Creations
+                        About Val's Creations
                     </motion.p>
 
                     {/* Animated divider */}
@@ -268,21 +268,19 @@ export default function About() {
                             aria-hidden="true"
                             initial={{
                                 opacity: 0,
-                                scale: 0.4,
-                                rotate: -90,
+                                scale: 0.5,
+                                rotate: -45,
                             }}
-                            whileInView={{
+                            animate={{
                                 opacity: 1,
                                 scale: 1,
                                 rotate: 0,
                             }}
-                            viewport={{ once: true }}
                             transition={{
-                                duration: 0.65,
-                                delay: 0.55,
-                                ease: [0.22, 1, 0.36, 1],
+                                duration: 0.55,
+                                delay: 0.62,
                             }}
-                            className="bg-gradient-to-b from-[#fff2b8] via-[#e6c15a] to-[#8f6729] bg-clip-text text-xl text-transparent"
+                            className="bg-gradient-to-b from-[#fff2b8] via-[#e6c15a] to-[#8f6729] bg-clip-text text-sm text-transparent drop-shadow-[0_1px_1px_rgba(255,245,200,0.5)]"
                         >
                             ✦
                         </motion.span>
@@ -304,28 +302,29 @@ export default function About() {
                         variants={textItem}
                         className="font-heading text-4xl font-medium leading-tight tracking-[-0.03em] text-[#3f3a37] md:text-5xl"
                     >
-                        Thoughtful Details.
+                        Experiences Your
                         <br />
-                        Beautiful Celebrations.
+                        Guests Will Love.
                     </motion.h2>
 
                     <motion.p
                         variants={textItem}
                         className="mt-7 max-w-xl text-lg leading-8 text-[#6f6863]"
                     >
-                        At Bals Creations, we believe every celebration deserves
-                        thoughtful details that leave a lasting impression. From
-                        interactive carts and dessert experiences to marquee letters,
-                        we create moments that bring people together.
-                    </motion.p>
+                        At Val's Creations, we believe every celebration deserves thoughtful
+                        details that leave a lasting impression. What began as a creative passion
+                        has grown into a business dedicated to bringing beautifully curated experiences
+                        to life's special moments.
+
+                       </motion.p>
 
                     <motion.p
                         variants={textItem}
                         className="mt-5 max-w-xl leading-7 text-[#756e69]"
                     >
-                        Whether you are planning an intimate gathering or a large
-                        celebration, our goal is to make every experience feel
-                        effortless, personal, and unforgettable.
+                        Whether you're planning an intimate gathering or a large event,
+                        our goal is to help you celebrate with confidence while creating
+                        moments you and your guests will remember long after the day is over.
                     </motion.p>
 
                     <motion.div
@@ -334,9 +333,9 @@ export default function About() {
                     >
                         {[
                             "Interactive Carts",
-                            "Dessert Experiences",
+                            "Food & Dessert Experiences",
                             "Marquee Letters",
-                            "Custom Event Details",
+                            "Personalized Events",
                         ].map((service) => (
                             <motion.div
                                 key={service}
@@ -444,7 +443,7 @@ export default function About() {
                                 <div className="relative aspect-[4/5]">
                                     <Image
                                         src="/images/about/about-cart.jpg"
-                                        alt="An interactive Bals Creations cart at an event"
+                                        alt="An interactive Val's Creations cart at an event"
                                         fill
                                         sizes="68vw"
                                         className="object-cover"
@@ -515,8 +514,8 @@ export default function About() {
                             >
                                 <div className="relative aspect-[4/5]">
                                     <Image
-                                        src="/images/about/about-dessert.jpg"
-                                        alt="A custom dessert experience by Bals Creations"
+                                        src="/images/about/about-interactive.jpg"
+                                        alt="A custom dessert experience by Val's Creations"
                                         fill
                                         sizes="82vw"
                                         className="object-cover"

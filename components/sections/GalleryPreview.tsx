@@ -6,24 +6,24 @@ import { motion } from "motion/react";
 
 const galleryImages = [
     {
-        src: "/images/gallery/gallery-1.jpg",
-        alt: "A styled event setup by Bals Creations",
+        src: "/images/galleryPreview/gallery-1.png",
+        alt: "A styled event setup by Vals Creations",
     },
     {
-        src: "/images/gallery/gallery-2.jpg",
+        src: "/images/galleryPreview/gallery-2.png",
         alt: "A custom dessert display at a celebration",
     },
     {
-        src: "/images/gallery/gallery-3.jpg",
-        alt: "An interactive cart prepared for an event",
+        src: "/images/galleryPreview/gallery-3.jpg",
+        alt: "An interactive activity prepared for an event",
     },
     {
-        src: "/images/gallery/gallery-4.jpg",
+        src: "/images/galleryPreview/gallery-4.png",
         alt: "Marquee letters displayed at a celebration",
     },
     {
-        src: "/images/gallery/gallery-5.jpg",
-        alt: "A detailed event setup by Bals Creations",
+        src: "/images/galleryPreview/gallery-5.png",
+        alt: "A detailed event setup by Vals Creations",
     },
 ];
 
@@ -31,7 +31,7 @@ export default function GalleryPreview() {
     return (
         <section
             id="gallery-preview"
-            className="relative overflow-hidden bg-[#fbf7f2] px-6 py-24 lg:px-10 lg:py-32"
+            className="relative overflow-hidden bg-[#fbf7f2fc] px-6 py-24 lg:px-10 lg:py-32"
         >
             {/* Decorative background details */}
             <div

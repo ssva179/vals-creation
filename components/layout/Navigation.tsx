@@ -50,7 +50,7 @@ export default function Navigation() {
                         About
                     </Link>
                     <Link
-                        href="/#experiences"
+                        href="/#services"
                         className="text-xl font-heading font-semibold text-[#49413d] transition-colors hover:text-[#c48276]"
                     >
                         Experiences
@@ -115,7 +115,7 @@ export default function Navigation() {
                         >About
                         </Link>
                         <Link
-                            href="/#experiences"
+                            href="/#services"
                             onClick={() => setIsOpen(false)}
                             className="font-heading text-xl md:text-2xl font-bold text-[#332e2b] hover:text-[#8f5e56]"
                         >Experiences
