@@ -99,7 +99,7 @@ export default function Navigation() {
 
             </nav>
             {isOpen && (
-                <div className="fixed inset-x-0 top-24 h-[calc(100dvh-6rem)] z-40 overflow-y-auto bg-[#dbbab4]/90 px-6 pt-16 lg:hidden">
+                <div className="fixed inset-x-0 top-24 h-[calc(100dvh-6rem)] z-40 overflow-y-auto bg-[#dbbab4]/93 px-6 pt-16 lg:hidden">
                     <div className="flex min-h-full w-full max-w-md flex-col gap-2 -mt-8 pl-6 pb-20">
                         <Link
                             href="/#hero"
