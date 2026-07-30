@@ -245,7 +245,7 @@ export const galleryCollections: Record<string, GalleryCollection> = {
         title: "Interactive Experiences",
         eyebrow: "Interactive Event Stations",
         description:
-            "Browse interactive setups designed to give guests a memorable experience, including bloom bars, onesie decorating stations, and other personalized activities.",
+            "Create unforgettable moments with our hands on experience stations designed to entertain, inspire, and leave guests with a meaningful keepsake. Whether they're building a beautiful bouquet at our Bloom Bar or designing a custom baby onesie, each station transforms your celebration into a memorable experience your guests will love.",
         media: [
             {
                 type: "video",
