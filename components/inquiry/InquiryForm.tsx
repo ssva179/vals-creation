@@ -232,10 +232,12 @@ export default function InquiryForm() {
                 ) ?? "",
             ),
 
-            marqueeCharacters: String(
-                formData.get(
-                    "marqueeCharacters",
-                ) ?? "",
+            marqueeType: String(
+                formData.get("marqueeType") ?? "",
+            ),
+
+            marqueeNumbers: String(
+                formData.get("marqueeNumbers") ?? "",
             ),
 
             otherService: String(

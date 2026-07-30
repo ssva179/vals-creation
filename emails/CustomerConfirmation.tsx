@@ -47,7 +47,7 @@ export default function CustomerConfirmation({
 
                     <Text style={paragraph}>
                         Your requested event date is{" "}
-                        <strong>{eventDate}</strong>. A member of our team will
+                        <strong>{eventDate}</strong>. We will
                         review the details and reach out within 24–48 hours.
                     </Text>
 

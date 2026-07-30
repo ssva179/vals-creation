@@ -10,52 +10,97 @@ type InquiryRequest = {
     name?: unknown;
     email?: unknown;
     phone?: unknown;
-    eventDate?: unknown;
+    preferredContact?: unknown;
     eventType?: unknown;
-    services?: unknown;
+    eventDate?: unknown;
+    startTime?: unknown;
+    endTime?: unknown;
+    guestCount?: unknown;
+    serviceType?: unknown;
+    foodOption?: unknown;
+    otherFoodOption?: unknown;
+    interactiveOption?: unknown;
+    otherInteractiveOption?: unknown;
+    marqueeType?: unknown;
+    marqueeNumbers?: unknown;
+    otherService?: unknown;
+    addAdditionalServices?: unknown;
+    additionalServices?: unknown;
+    additionalServiceDetails?: unknown;
     message?: unknown;
 };
 
+function getString(value: unknown) {
+    return typeof value === "string" ? value.trim() : "";
+}
+
 export async function POST(request: Request) {
     try {
+        if (!process.env.RESEND_API_KEY) {
+            console.error("RESEND_API_KEY is missing.");
+
+            return NextResponse.json(
+                {
+                    error: "The email service is not configured.",
+                },
+                {
+                    status: 500,
+                },
+            );
+        }
+
         const body = (await request.json()) as InquiryRequest;
 
-        const name =
-            typeof body.name === "string" ? body.name.trim() : "";
+        const name = getString(body.name);
+        const email = getString(body.email);
+        const phone = getString(body.phone);
+        const preferredContact = getString(body.preferredContact);
+        const eventType = getString(body.eventType);
+        const eventDate = getString(body.eventDate);
+        const startTime = getString(body.startTime);
+        const endTime = getString(body.endTime);
+        const guestCount = getString(body.guestCount);
+        const serviceType = getString(body.serviceType);
+        const foodOption = getString(body.foodOption);
+        const otherFoodOption = getString(body.otherFoodOption);
+        const interactiveOption = getString(body.interactiveOption);
+        const otherInteractiveOption = getString(
+            body.otherInteractiveOption,
+        );
+        const marqueeType = getString(body.marqueeType);
+        const marqueeNumbers = getString(body.marqueeNumbers);
+        const otherService = getString(body.otherService);
+        const addAdditionalServices = getString(
+            body.addAdditionalServices,
+        );
+        const additionalServiceDetails = getString(
+            body.additionalServiceDetails,
+        );
+        const message = getString(body.message);
 
-        const email =
-            typeof body.email === "string" ? body.email.trim() : "";
-
-        const phone =
-            typeof body.phone === "string" ? body.phone.trim() : "";
-
-        const eventDate =
-            typeof body.eventDate === "string"
-                ? body.eventDate.trim()
-                : "";
-
-        const eventType =
-            typeof body.eventType === "string"
-                ? body.eventType.trim()
-                : "";
-
-        const message =
-            typeof body.message === "string"
-                ? body.message.trim()
-                : "";
-
-        const services = Array.isArray(body.services)
-            ? body.services.filter(
-                (service): service is string =>
-                    typeof service === "string",
-            )
+        const additionalServices = Array.isArray(
+            body.additionalServices,
+        )
+            ? body.additionalServices
+                .filter(
+                    (service): service is string =>
+                        typeof service === "string",
+                )
+                .map((service) => service.trim())
+                .filter(Boolean)
             : [];
 
         if (
             !name ||
             !email ||
-            !eventDate ||
+            !preferredContact ||
             !eventType ||
+            !eventDate ||
+            !startTime ||
+            !endTime ||
+            !guestCount ||
+            !serviceType ||
+            !addAdditionalServices ||
             !message
         ) {
             return NextResponse.json(
@@ -68,10 +113,150 @@ export async function POST(request: Request) {
             );
         }
 
-        const testEmail = process.env.VALS_CREATIONS_EMAIL;
+        if (preferredContact === "phone" && !phone) {
+            return NextResponse.json(
+                {
+                    error: "Please provide a phone number.",
+                },
+                {
+                    status: 400,
+                },
+            );
+        }
 
-        if (!testEmail) {
-            console.error("RESEND_TEST_EMAIL is missing.");
+        if (serviceType === "food-cart-experience" && !foodOption) {
+            return NextResponse.json(
+                {
+                    error: "Please select a food cart option.",
+                },
+                {
+                    status: 400,
+                },
+            );
+        }
+
+        if (
+            serviceType === "food-cart-experience" &&
+            foodOption === "other" &&
+            !otherFoodOption
+        ) {
+            return NextResponse.json(
+                {
+                    error: "Please describe the food option you want.",
+                },
+                {
+                    status: 400,
+                },
+            );
+        }
+
+        if (
+            serviceType === "interactive-experience" &&
+            !interactiveOption
+        ) {
+            return NextResponse.json(
+                {
+                    error: "Please select an interactive experience.",
+                },
+                {
+                    status: 400,
+                },
+            );
+        }
+
+        if (
+            serviceType === "interactive-experience" &&
+            interactiveOption === "other" &&
+            !otherInteractiveOption
+        ) {
+            return NextResponse.json(
+                {
+                    error: "Please describe the interactive experience.",
+                },
+                {
+                    status: 400,
+                },
+            );
+        }
+
+        if (
+            serviceType === "marquee-letters" &&
+            !marqueeType
+        ) {
+            return NextResponse.json(
+                {
+                    error: "Please select a marquee option.",
+                },
+                {
+                    status: 400,
+                },
+            );
+        }
+
+        if (
+            serviceType === "marquee-letters" &&
+            marqueeType === "numbers" &&
+            !marqueeNumbers
+        ) {
+            return NextResponse.json(
+                {
+                    error: "Please provide the requested marquee numbers.",
+                },
+                {
+                    status: 400,
+                },
+            );
+        }
+
+        if (serviceType === "other" && !otherService) {
+            return NextResponse.json(
+                {
+                    error: "Please describe the service you want.",
+                },
+                {
+                    status: 400,
+                },
+            );
+        }
+
+        if (
+            addAdditionalServices === "yes" &&
+            additionalServices.length === 0
+        ) {
+            return NextResponse.json(
+                {
+                    error: "Please select at least one additional service.",
+                },
+                {
+                    status: 400,
+                },
+            );
+        }
+
+        if (
+            addAdditionalServices === "yes" &&
+            !additionalServiceDetails
+        ) {
+            return NextResponse.json(
+                {
+                    error: "Please provide details about the additional services.",
+                },
+                {
+                    status: 400,
+                },
+            );
+        }
+
+        const businessEmail =
+            process.env.VALS_CREATIONS_EMAIL;
+
+        const senderEmail =
+            process.env.RESEND_FROM_EMAIL;
+
+        if (!businessEmail || !senderEmail) {
+            console.error(
+                "VALS_CREATIONS_EMAIL or RESEND_FROM_EMAIL is missing.",
+            );
 
             return NextResponse.json(
                 {
@@ -83,38 +268,34 @@ export async function POST(request: Request) {
             );
         }
 
-        /*
-         * While using onboarding@resend.dev, both messages must go
-         * to the email associated with your Resend account.
-         */
-        const [businessResult, confirmationResult] =
-            await Promise.all([
-                resend.emails.send({
-                    from: "Val's Creations <onboarding@resend.dev>",
-                    to: [testEmail],
-                    replyTo: email,
-                    subject: `New inquiry from ${name}`,
-                    react: BusinessInquiry({
-                        name,
-                        email,
-                        phone,
-                        eventDate,
-                        eventType,
-                        services,
-                        message,
-                    }),
-                }),
-
-                resend.emails.send({
-                    from: "Val's Creations <onboarding@resend.dev>",
-                    to: [testEmail],
-                    subject: `Confirmation for ${name}'s inquiry`,
-                    react: CustomerConfirmation({
-                        name,
-                        eventDate,
-                    }),
-                }),
-            ]);
+        const businessResult = await resend.emails.send({
+            from: `Val's Creations <${senderEmail}>`,
+            to: [businessEmail],
+            replyTo: email,
+            subject: `New inquiry from ${name}`,
+            react: BusinessInquiry({
+                name,
+                email,
+                phone,
+                preferredContact,
+                eventDate,
+                eventType,
+                startTime,
+                endTime,
+                guestCount,
+                serviceType,
+                foodOption,
+                otherFoodOption,
+                interactiveOption,
+                otherInteractiveOption,
+                marqueeType,
+                marqueeNumbers,
+                otherService,
+                additionalServices,
+                additionalServiceDetails,
+                message,
+            }),
+        });
 
         if (businessResult.error) {
             console.error(
@@ -124,13 +305,24 @@ export async function POST(request: Request) {
 
             return NextResponse.json(
                 {
-                    error: "The business email could not be sent.",
+                    error: "The inquiry could not be delivered.",
                 },
                 {
                     status: 500,
                 },
             );
         }
+
+        const confirmationResult = await resend.emails.send({
+            from: `Val's Creations <${senderEmail}>`,
+            to: [email],
+            replyTo: businessEmail,
+            subject: "We received your inquiry",
+            react: CustomerConfirmation({
+                name,
+                eventDate,
+            }),
+        });
 
         if (confirmationResult.error) {
             console.error(
@@ -140,7 +332,8 @@ export async function POST(request: Request) {
 
             return NextResponse.json(
                 {
-                    error: "The confirmation email could not be sent.",
+                    error:
+                        "Your inquiry was delivered, but the confirmation email could not be sent.",
                 },
                 {
                     status: 500,

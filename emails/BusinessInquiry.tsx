@@ -14,19 +14,108 @@ type BusinessInquiryProps = {
     name: string;
     email: string;
     phone?: string;
+    preferredContact: string;
     eventDate: string;
     eventType: string;
-    services: string[];
+    startTime: string;
+    endTime: string;
+    guestCount: string;
+    serviceType: string;
+    foodOption?: string;
+    otherFoodOption?: string;
+    interactiveOption?: string;
+    otherInteractiveOption?: string;
+    marqueeType?: string;
+    marqueeNumbers?: string;
+    otherService?: string;
+    additionalServices: string[];
+    additionalServiceDetails?: string;
     message: string;
 };
+
+const labels: Record<string, string> = {
+    email: "Email",
+    phone: "Phone",
+    birthday: "Birthday",
+    wedding: "Wedding",
+    "baby-shower": "Baby Shower",
+    "bridal-shower": "Bridal Shower",
+    graduation: "Graduation",
+    corporate: "Corporate Event",
+    holiday: "Holiday Celebration",
+    other: "Other",
+    "food-cart-experience": "Food Cart Experience",
+    "cart-rental-only": "Cart Rental Only",
+    "interactive-experience": "Interactive Experience",
+    "marquee-letters": "Marquee Letters",
+    charcuterie: "Charcuterie",
+    "snack-cart": "Snack Cart",
+    "cotton-candy": "Cotton Candy",
+    "paleta-cart": "Paleta Cart",
+    elote: "Elote",
+    "dubai-chocolate": "Dubai Chocolate",
+    "waffle-stick": "Waffle Stick",
+    "bloom-bar": "Bloom Bar",
+    "onesie-decorating-station":
+        "Onesie Decorating Station",
+    "candy-bar": "Candy Bar",
+    grad: "GRAD",
+    numbers: "Numbers",
+};
+
+function formatLabel(value?: string) {
+    if (!value) {
+        return "Not provided";
+    }
+
+    return (
+        labels[value] ??
+        value
+            .split("-")
+            .map(
+                (word) =>
+                    word.charAt(0).toUpperCase() +
+                    word.slice(1),
+            )
+            .join(" ")
+    );
+}
+
+function Detail({
+                    label,
+                    children,
+                }: {
+    label: string;
+    children: React.ReactNode;
+}) {
+    return (
+        <>
+            <Text style={labelStyle}>{label}</Text>
+            <Text style={valueStyle}>{children}</Text>
+        </>
+    );
+}
 
 export default function BusinessInquiry({
                                             name,
                                             email,
                                             phone,
+                                            preferredContact,
                                             eventDate,
                                             eventType,
-                                            services,
+                                            startTime,
+                                            endTime,
+                                            guestCount,
+                                            serviceType,
+                                            foodOption,
+                                            otherFoodOption,
+                                            interactiveOption,
+                                            otherInteractiveOption,
+                                            marqueeType,
+                                            marqueeNumbers,
+                                            otherService,
+                                            additionalServices,
+                                            additionalServiceDetails,
                                             message,
                                         }: BusinessInquiryProps) {
     return (
@@ -37,49 +126,122 @@ export default function BusinessInquiry({
 
             <Body style={body}>
                 <Container style={container}>
-                    <Text style={eyebrow}>VAL&apos;S CREATIONS</Text>
+                    <Text style={eyebrow}>
+                        VAL&apos;S CREATIONS
+                    </Text>
 
-                    <Heading style={heading}>New Event Inquiry</Heading>
+                    <Heading style={heading}>
+                        New Event Inquiry
+                    </Heading>
 
                     <Text style={intro}>
-                        A new inquiry was submitted through the website.
+                        A new inquiry was submitted through the
+                        website.
                     </Text>
 
                     <Hr style={divider} />
 
                     <Section>
-                        <Text style={label}>Name</Text>
-                        <Text style={value}>{name}</Text>
+                        <Detail label="Name">{name}</Detail>
 
-                        <Text style={label}>Email</Text>
-                        <Text style={value}>{email}</Text>
+                        <Detail label="Email">{email}</Detail>
 
-                        <Text style={label}>Phone</Text>
-                        <Text style={value}>
-                            {phone?.trim() || "Not provided"}
-                        </Text>
+                        <Detail label="Phone">
+                            {phone || "Not provided"}
+                        </Detail>
 
-                        <Text style={label}>Event date</Text>
-                        <Text style={value}>{eventDate}</Text>
+                        <Detail label="Preferred contact">
+                            {formatLabel(preferredContact)}
+                        </Detail>
 
-                        <Text style={label}>Event type</Text>
-                        <Text style={value}>{eventType}</Text>
+                        <Detail label="Event type">
+                            {formatLabel(eventType)}
+                        </Detail>
 
-                        <Text style={label}>Services</Text>
-                        <Text style={value}>
-                            {services.length > 0
-                                ? services.join(", ")
+                        <Detail label="Event date">
+                            {eventDate}
+                        </Detail>
+
+                        <Detail label="Event time">
+                            {startTime}–{endTime}
+                        </Detail>
+
+                        <Detail label="Estimated guests">
+                            {guestCount}
+                        </Detail>
+
+                        <Detail label="Primary service">
+                            {formatLabel(serviceType)}
+                        </Detail>
+
+                        {serviceType ===
+                            "food-cart-experience" && (
+                                <Detail label="Food cart option">
+                                    {foodOption === "other"
+                                        ? otherFoodOption
+                                        : formatLabel(foodOption)}
+                                </Detail>
+                            )}
+
+                        {serviceType ===
+                            "interactive-experience" && (
+                                <Detail label="Interactive experience">
+                                    {interactiveOption === "other"
+                                        ? otherInteractiveOption
+                                        : formatLabel(
+                                            interactiveOption,
+                                        )}
+                                </Detail>
+                            )}
+
+                        {serviceType === "marquee-letters" && (
+                            <>
+                                <Detail label="Marquee option">
+                                    {formatLabel(marqueeType)}
+                                </Detail>
+
+                                {marqueeType === "numbers" && (
+                                    <Detail label="Numbers requested">
+                                        {marqueeNumbers}
+                                    </Detail>
+                                )}
+                            </>
+                        )}
+
+                        {serviceType === "other" && (
+                            <Detail label="Requested service">
+                                {otherService}
+                            </Detail>
+                        )}
+
+                        <Detail label="Additional services">
+                            {additionalServices.length > 0
+                                ? additionalServices
+                                    .map(formatLabel)
+                                    .join(", ")
                                 : "None selected"}
+                        </Detail>
+
+                        {additionalServiceDetails && (
+                            <Detail label="Additional service details">
+                                {additionalServiceDetails}
+                            </Detail>
+                        )}
+
+                        <Text style={labelStyle}>
+                            Additional event details
                         </Text>
 
-                        <Text style={label}>Event details</Text>
-                        <Text style={messageStyle}>{message}</Text>
+                        <Text style={messageStyle}>
+                            {message}
+                        </Text>
                     </Section>
 
                     <Hr style={divider} />
 
                     <Text style={footer}>
-                        Reply directly to this email to respond to {name}.
+                        Reply directly to this email to respond to{" "}
+                        {name}.
                     </Text>
                 </Container>
             </Body>
@@ -131,7 +293,7 @@ const divider = {
     margin: "28px 0",
 };
 
-const label = {
+const labelStyle = {
     color: "#9b7945",
     fontSize: "11px",
     fontWeight: "700",
@@ -140,7 +302,7 @@ const label = {
     textTransform: "uppercase" as const,
 };
 
-const value = {
+const valueStyle = {
     color: "#4e4844",
     fontSize: "16px",
     lineHeight: "24px",
@@ -148,7 +310,7 @@ const value = {
 };
 
 const messageStyle = {
-    ...value,
+    ...valueStyle,
     whiteSpace: "pre-wrap" as const,
 };
 
