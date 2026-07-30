@@ -27,8 +27,8 @@ export default function Navigation() {
                     </div>
                     {/*Brand and tagline */}
                     <div className="leading-tight">
-                        <h1 className="font-heading text-3xl font-medium leading-none">
-                            VAL&apos;S CREATIONS
+                        <h1 className="font-heading text-2xl font-medium leading-none">
+                            VAL&apos;S CREATIONS & PARTY RENTALS
                         </h1>
                         <p className="pl-1 font-sans font-semibold text-xs uppercase tracking-[0.2em] text-[#c48276]">
                              Luxury  Event  Experiences
