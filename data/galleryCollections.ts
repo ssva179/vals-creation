@@ -31,6 +31,61 @@ export const galleryCollections: Record<string, GalleryCollection> = {
 
             {
                 type: "image",
+                src: "/images/gallery/food-carts/dubai-chocolate/newdubai.JPEG",
+                alt: "Dubai chocolate dessert display",
+                title: "Dubai Chocolate",
+            },
+            {
+                type: "image",
+                src: "/images/gallery/food-carts/dubai-chocolate/dubai2.PNG",
+                alt: "Dubai chocolate dessert display",
+                title: "Dubai Chocolate",
+            },
+            {
+                type: "video",
+                src: "/images/gallery/food-carts/dubai-chocolate/dubai_4.mov",
+                title: "Dubai Chocolate",
+            },
+            {
+                type: "video",
+                src: "/images/gallery/food-carts/dubai-chocolate/dubai_1.mov",
+                title: "Dubai Chocolate",
+            },
+            {
+                type: "image",
+                src: "/images/gallery/food-carts/dubai-chocolate/dubai_2.jpg",
+                alt: "Dubai chocolate dessert display",
+                title: "Dubai Chocolate",
+            },
+            {
+                type: "video",
+                src: "/images/gallery/food-carts/dubai-chocolate/dubai_3.mov",
+                title: "Dubai Chocolate",
+            },
+            {
+                type: "video",
+                src: "/images/gallery/food-carts/dubai-chocolate/dubai_5.mov",
+                title: "Dubai Chocolate",
+            },
+            {
+                type: "video",
+                src: "/images/gallery/food-carts/dubai-chocolate/dubai_1.25.MOV",
+                title: "Dubai Chocolate",
+            },
+            {
+                type: "image",
+                src: "/images/gallery/food-carts/dubai-chocolate/woody3.JPEG",
+                alt: "Dubai chocolate dessert display",
+                title: "Dubai Chocolate",
+            },
+            {
+                type: "image",
+                src: "/images/gallery/food-carts/dubai-chocolate/woody2.jpg",
+                alt: "Dubai chocolate dessert display",
+                title: "Dubai Chocolate",
+            },
+            {
+                type: "image",
                 src: "/images/gallery/food-carts/paleta/paleta_1.png",
                 alt: "White paleta cart styled for an event",
                 title: "Paleta Cart",
@@ -64,32 +119,6 @@ export const galleryCollections: Record<string, GalleryCollection> = {
                 src: "/images/gallery/food-carts/paleta/paleta_6.mov",
                 title: "Paleta & Ice Cream Cart",
             },
-            {
-                type: "video",
-                src: "/images/gallery/food-carts/dubai-chocolate/dubai_1.mov",
-                title: "Dubai Chocolate",
-            },
-            {
-                type: "image",
-                src: "/images/gallery/food-carts/dubai-chocolate/dubai_2.jpg",
-                alt: "Dubai chocolate dessert display",
-                title: "Dubai Chocolate",
-            },
-            {
-                type: "video",
-                src: "/images/gallery/food-carts/dubai-chocolate/dubai_3.mov",
-                title: "Dubai Chocolate",
-            },
-            {
-                type: "video",
-                src: "/images/gallery/food-carts/dubai-chocolate/dubai_4.mov",
-                title: "Dubai Chocolate",
-            },
-            {
-                type: "video",
-                src: "/images/gallery/food-carts/dubai-chocolate/dubai_5.mov",
-                title: "Dubai Chocolate",
-            },
 
             {
                 type: "image",
@@ -120,6 +149,7 @@ export const galleryCollections: Record<string, GalleryCollection> = {
                 alt: "Styled charcuterie experience",
                 title: "Charcuterie Cart",
             },
+
 
             {
                 type: "image",
@@ -326,6 +356,18 @@ export const galleryCollections: Record<string, GalleryCollection> = {
         media: [
             {
                 type: "image",
+                src: "/images/gallery/custom/waffle2.jpg",
+                alt: "Custom dessert option",
+                title: "New Waffle on a Stick!",
+            },
+            {
+                type: "image",
+                src: "/images/gallery/custom/waffle.jpg",
+                alt: "Custom dessert option",
+                title: "New Waffle on a Stick!",
+            },
+            {
+                type: "image",
                 src: "/images/gallery/custom/charcuterie.png",
                 alt: "Custom charcuterie display styled for an event",
                 title: "Custom Charcuterie Display",
@@ -341,6 +383,12 @@ export const galleryCollections: Record<string, GalleryCollection> = {
                 src: "/images/gallery/custom/customdessert.jpg",
                 alt: "Custom dessert display prepared for a celebration",
                 title: "Custom Dessert Display",
+            },
+            {
+                type: "image",
+                src: "/images/gallery/custom/newdubai.JPEG",
+                alt: "Personalized event setup and custom decor",
+                title: "Custom Event Styling",
             },
         ],
     },

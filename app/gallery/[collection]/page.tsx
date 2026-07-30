@@ -1,4 +1,4 @@
-import Image from "next/image";
+import GalleryGrid from "@/components/gallery/GalleryGrid";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
@@ -88,81 +88,7 @@ export default async function CollectionPage({
 
                 {/* Media grid */}
                 <section className="px-6 pb-24 lg:px-10 lg:pb-32">
-                    <div className="mx-auto grid max-w-7xl gap-7 sm:grid-cols-2 lg:grid-cols-3">
-                        {currentCollection.media.map((item, index) => (
-                            <article
-                                key={`${item.src}-${index}`}
-                                className="
-                                    group
-                                    overflow-hidden
-                                    rounded-[24px]
-                                    border
-                                    border-[#d8bd8c]/35
-                                    bg-white
-                                    p-3
-                                    shadow-[0_16px_45px_rgba(92,65,45,0.07)]
-                                    transition-all
-                                    duration-500
-                                    hover:-translate-y-1
-                                    hover:border-[#c5a065]/65
-                                    hover:shadow-[0_22px_58px_rgba(92,65,45,0.12)]
-                                "
-                            >
-                                <div
-                                    className="
-                                        relative
-                                        aspect-[4/5]
-                                        overflow-hidden
-                                        rounded-[17px]
-                                        border
-                                        border-[#d8bd8c]/25
-                                        bg-[#f8f3ed]
-                                    "
-                                >
-                                    {item.type === "image" ? (
-                                        <Image
-                                            src={item.src}
-                                            alt={item.alt}
-                                            fill
-                                            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                                            className="
-                                                object-cover
-                                                transition-all
-                                                duration-700
-                                                group-hover:scale-[1.025]
-                                                group-hover:brightness-[1.025]
-                                            "
-                                        />
-                                    ) : (
-                                        <video
-                                            controls
-                                            playsInline
-                                            preload="metadata"
-                                            poster={item.poster}
-                                            className="h-full w-full object-cover"
-                                        >
-                                            <source src={item.src} />
-
-                                            Your browser does not support the
-                                            video element.
-                                        </video>
-                                    )}
-
-                                    {item.title && (
-                                        <>
-                                            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#2b241f]/60 via-transparent to-transparent" />
-
-                                            <div className="pointer-events-none absolute inset-x-0 bottom-0 px-5 pb-5 pt-20">
-                                                <h2 className="font-heading text-xl font-medium tracking-[-0.02em] text-white">
-                                                    {item.title}
-                                                </h2>
-                                            </div>
-                                        </>
-                                    )}
-                                </div>
-                            </article>
-                        ))}
-                    </div>
+                    <GalleryGrid media={currentCollection.media} />
                 </section>
 
                 {/* Inquiry CTA */}

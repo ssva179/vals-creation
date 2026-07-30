@@ -24,6 +24,7 @@ const galleryImages = [
     {
         src: "/images/galleryPreview/gallery-5.png",
         alt: "A detailed event setup by Vals Creations",
+        position: "50% 70%",
     },
 ];
 
