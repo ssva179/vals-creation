@@ -31,7 +31,7 @@ export default function Navigation() {
                             VAL&apos;S CREATIONS & PARTY RENTALS
                         </h1>
                         <p className="pl-1 font-sans font-semibold text-xs uppercase tracking-[0.2em] text-[#c48276]">
-                             Luxury  Event  Experiences
+                             Luxury Experiences
                         </p>
                     </div>
                 </Link>
